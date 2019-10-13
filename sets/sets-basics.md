@@ -56,7 +56,11 @@
         {'Mountain Bike', 'Athletics', 'Archery'}
         ````
     - the above example combine olympics games and paralympics games
-
+        ````
+        >> all_sports_set = olympics_sports_set | paralympics_sports_set
+        >> all_sports_set
+        {'Mountain Bike', 'Athletics', 'Archery'}
+        ````
 - *Intersection* of sets 
     - Intersection will take only common elements of both the sets
     ```
@@ -66,6 +70,10 @@
     {'Dhansh'}
     ````
     - The common actor from both the list is *Dhanush*
+    ````
+    >> hollywood_actors & indian_actors
+    {'Dhansh'}
+    ````
 
 - *Difference* of Sets
     - Difference for between two sets
