@@ -226,3 +226,87 @@ it products the data, it can only access through functions.the shell is called
     In [47]: x.Robotinstance()
     Out[47]: 1
    ````
+
+- Difference between Static, class and Dynamic methods
+    - example with instance method
+    ````
+    class Pet(object):
+        _class_info = "I am the Pet"
+
+        def about():
+            return "Info : + Pet._class_info
+
+    class Dog(Pet):
+        _class_info = "I am Dog"
+    
+    class Cat(Pet):
+        _class_info = "I am Cat"
+
+    p = Pet()
+    p.about()
+    d = Dog()
+    d.about()
+    c= Cat()
+    c.about()
+
+    "Info: I am Pet"
+    "Info: I am Dog"
+    "Info: I am Cat"
+    ````
+    - This above inheritance class are working fine, but the problem is 
+    we cannot call the without instance help that's why it called instance 
+    method
+
+    - example with static method
+    ````
+    class Pet(object):
+        _class_info = "I am the Pet"
+
+        @staticmethod
+        def about():
+            return "Info : + Pet._class_info
+
+    class Dog(Pet):
+        _class_info = "I am Dog"
+    
+    class Cat(Pet):
+        _class_info = "I am Cat"
+
+    Pet().about()
+    Dog().about()
+    Cat().about()
+
+    "Info: I am Pet"
+    "Info: I am Pet"
+    "Info: I am Pet"
+    ````
+    - here static methods are not taking first method as instance methods
+    so it is always return the same result
+
+    - example with class method
+    ````
+    class Pet(object):
+        _class_info = "I am the Pet"
+
+        @classmethod
+        def about(cls):
+            return "Info : + cls._class_info
+
+    class Dog(Pet):
+        _class_info = "I am Dog"
+    
+    class Cat(Pet):
+        _class_info = "I am Cat"
+
+    Pet().about()
+    Dog().about()
+    Cat().about()
+
+    "Info: I am Pet"
+    "Info: I am Dog"
+    "Info: I am Cat"
+    ````
+    - class methods are helpful when you use the inheritance
+    
+
+
